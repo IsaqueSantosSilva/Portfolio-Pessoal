@@ -1,0 +1,52 @@
+@import "../variable.scss";
+
+.footer-menu {
+  position: fixed;
+  width: 100%;
+  z-index: 888;
+  background-color: var(--alt-bg-color);
+  color: #fff;
+  gap: 0.7rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem 10px;
+  transition: .3s;
+  display: none;
+  color: var(--text-color);
+  box-shadow: 0px 0px 7px #111;
+  // border-top: 1px solid #333;
+  border-radius: 5px 5px 0px 0px;
+
+  .menu-opition {
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    border-radius: 3px;
+    outline: 2px solid;
+    flex-basis: 0;
+    flex: 1 1 0px;
+
+    .icon {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    span {
+      font-size: 1rem;
+    }
+  }
+
+  .menu-opition:hover {
+    background-color: #333;
+  }
+
+  .menu-opition:nth-of-type(1) {
+    background-color: var(--primary-color);
+
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footer-menu {
+    display: flex;
+  }
+}

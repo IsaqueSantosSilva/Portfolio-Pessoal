@@ -1,0 +1,85 @@
+@import "../variable.scss";
+@import "../mixin";
+
+.percentage-main-container {
+  padding: 1rem;
+  max-width: 700px;
+  transition: 0.2s;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 5rem;
+  display: grid;
+  gap: 1rem;
+  background-color: var(--primary-bg-color);
+  box-shadow: 0px 0px 3px #111;
+  color: var(--text-color);
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+
+  .percentage-container {
+    display: flex;
+    align-items: center;
+    //     gap: 1rem;
+
+    .percentage-bar {
+      background-color: var(--secondary-bg-color);
+      border-radius: 5px;
+      flex-grow: 1;
+
+      .bar {
+        border-radius: 5px 50px 50px 5px;
+        height: 30px;
+        transition: 0.4s;
+        display: flex;
+        align-items: center;
+
+        span {
+          font-size: 0.9rem;
+          position: relative;
+          left: 5px;
+        }
+      }
+
+      .css {
+        background-color: #2965f1;
+      }
+      .ts {
+        background-color: #2d78c7;
+      }
+      .scss {
+        background-color: #cd669b;
+      }
+      .html {
+        background-color: #f06524;
+      }
+      .js {
+        background-color: #ead41c;
+      }
+    }
+
+    .percentage-value {
+      text-align: end;
+      width: 80px;
+    }
+  }
+}
+
+.percentage-main-container:hover {
+  box-shadow: 2px 2px 7px #111;
+}
+
+@media screen and (max-width: 400px) {
+  .percentage-main-container {
+    p {
+      font-size: 1.2rem;
+    }
+    .percentage-container {
+      .percentage-value {
+        width: 60px;
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+@import './components/variable';
+
+#IsaqueSantosSilva,
+#MyPortofolio,
+#Web-Projeto,
+#TodoList-in-Angular9,
+#PyTools,
+#PortfólioPessoal {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Bai Jamjuree", sans-serif;
+  scroll-behavior: smooth;
+  border: 0;
+}
+
+*:focus {
+  outline: 0;
+  border: 0;
+}
+
+body {
+  background-color: var(--primary-bg-color);
+  overflow-y: hidden;
+}
+
+.section-main-title-container {
+  text-align: center;
+  display: grid;
+  gap: 0.4rem;
+
+  p:nth-of-type(1) {
+    font-size: 2rem;
+    font-weight: 900;
+  }
+
+  p:nth-of-type(2) {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section-main-title-container {
+    p:nth-of-type(1) {
+      font-size: 1.7rem;
+    }
+
+    p:nth-of-type(2) {
+      font-size: 1rem;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+
+@media screen and (max-width: 600px) {
+  body,
+  html {
+    font-size: 95%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  body,
+  html {
+    font-size: 85%;
+  }
+}

@@ -1,0 +1,68 @@
+@import "../variable.scss";
+@import "../mixin";
+
+.about-container {
+  background-color: var(--secondary-bg-color);
+  padding: 5rem 1rem;
+  color: var(--text-color);
+
+  .about-details {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 5rem;
+
+    .about {
+      max-width: 450px;
+      font-size: 1.2rem;
+      line-height: 25px;
+    }
+
+    .details {
+      display: grid;
+      place-items: center;
+      gap: 2rem;
+      position: relative;
+      bottom: 10px;
+
+      .experience-div {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+
+        .experience {
+          text-align: center;
+          max-width: 100px;
+
+          p:nth-of-type(1) {
+            font-size: 1.4rem;
+            font-weight: 900;
+          }
+
+          p:nth-of-type(2) {
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      button {
+        @include button;
+      }
+
+      button:hover {
+        transform: translateY(-3px);
+      }
+
+      button:hover .icon {
+        transform: translateX(0.3rem) scale(1.2);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 508px) {
+  .about-container .about-details {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}

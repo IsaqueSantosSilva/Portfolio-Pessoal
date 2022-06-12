@@ -1,0 +1,21 @@
+@import "../variable.scss";
+
+.ScrollTopButton-container {
+  position: fixed;
+  bottom: 45px;
+  right: 25px;
+  z-index: 998;
+
+  button {
+    background-color: var(--primary-color);
+    padding: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .ScrollTopButton-container {
+    display: none;
+  }
+}

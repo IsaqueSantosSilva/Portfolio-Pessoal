@@ -1,0 +1,17 @@
+@import "../variable.scss";
+@import "../mixin";
+
+.darkSwitch-btn {
+  transition: 0.3s;
+  background: none;
+  color: #222;
+  cursor: pointer;
+
+  // .icon-moon {
+  //   font-size: 1rem;
+  // }
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+}

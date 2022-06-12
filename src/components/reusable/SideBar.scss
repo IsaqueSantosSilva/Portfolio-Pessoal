@@ -1,0 +1,89 @@
+@import "../variable.scss";
+@import "../mixin";
+
+.sidebar {
+  background-color: #222;
+  box-shadow: 0px 0px 10px #000;
+  color: #fff;
+  position: fixed;
+  right: -333px;
+  top: 0;
+  width: 100%;
+  transition: 0.3s all;
+  max-width: 300px;
+  z-index: 888;
+
+  .header {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span:nth-of-type(1) {
+      font-weight: 900;
+      font-size: 2rem;
+    }
+
+    span:nth-of-type(2) {
+      font-weight: 900;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .menu-options-container {
+    overflow-y: scroll;
+    height: 100vh;
+
+    .menu-options {
+      display: grid;
+      gap: 1rem;
+      padding: 1rem;
+
+      li {
+        font-size: 1.1rem;
+        display: flex;
+        gap: 2rem;
+        border-radius: 7px;
+        padding: 1rem;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      li:hover {
+        background-color: #333;
+      }
+    }
+
+    .navegation {
+      margin-top: 1rem;
+
+      li:nth-of-type(1) {
+        background-color: var(--primary-color);
+      }
+    }
+
+    .contact li {
+      position: relative;
+
+      .arrow-icon {
+        float: right;
+        position: absolute;
+        right: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .sidebar .menu-options {
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar {
+    display: none;
+  }
+}

@@ -1,0 +1,42 @@
+@import "./variable.scss";
+
+@mixin button {
+  @include flex-center;
+  position: relative;
+  gap: 0.3rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px #222;
+  width: max-content;
+  height: 40px;
+  cursor: pointer;
+  transition: .3s;
+
+  .icon {
+    display: inline-flex;
+    transition: 0.3s;
+  }
+}
+
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

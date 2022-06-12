@@ -1,0 +1,99 @@
+@import "../variable.scss";
+@import "../mixin";
+
+#preloader {
+  background: var(--primary-bg-color);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  z-index: 999;
+
+  .item {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    list-style-type: none;
+    transition: 0.5s all ease;
+  }
+  .item:nth-child(1) {
+    animation: right-1 1s infinite alternate;
+    background-color: var(--primary-color);
+    animation-delay: 0.1s;
+  }
+  @keyframes right-1 {
+    0% {
+      transform: translateY(-50px);
+    }
+    100% {
+      transform: translateY(40px);
+    }
+  }
+  .item:nth-child(2) {
+    animation: right-2 1s infinite alternate;
+    background-color: var(--primary-color);
+    animation-delay: 0.2s;
+  }
+  @keyframes right-2 {
+    0% {
+      transform: translateY(-60px);
+    }
+    100% {
+      transform: translateY(50px);
+    }
+  }
+  .item:nth-child(3) {
+    animation: right-3 1s infinite alternate;
+    background-color: var(--primary-color);
+    animation-delay: 0.3s;
+  }
+  @keyframes right-3 {
+    0% {
+      transform: translateY(-70px);
+    }
+    100% {
+      transform: translateY(60px);
+    }
+  }
+  .item:nth-child(4) {
+    animation: right-4 1s infinite alternate;
+    background-color: var(--primary-color);
+    animation-delay: 0.4s;
+  }
+  @keyframes right-4 {
+    0% {
+      transform: translateY(-80px);
+    }
+    100% {
+      transform: translateY(70px);
+    }
+  }
+
+  .item:nth-child(5) {
+    animation: right-5 1s infinite alternate;
+    background-color: var(--primary-color);
+    animation-delay: 0.5s;
+  }
+
+  @keyframes right-5 {
+    0% {
+      transform: translateY(-90px);
+    }
+    100% {
+      transform: translateY(80px);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .item:nth-child(5) {
+    display: none;
+  }
+  .item {
+    width: 15px;
+    height: 15px;
+    margin: 8px;
+  }
+}

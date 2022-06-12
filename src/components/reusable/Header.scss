@@ -1,0 +1,90 @@
+@import "../variable.scss";
+@import "../mixin";
+
+.Header {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  color: #333;
+  position: fixed;
+  width: 100%;
+  z-index: 888;
+  transition: 0.3s;
+
+  .Name-div {
+    font-size: 1.6rem;
+    font-weight: 900;
+  }
+
+  .navLinks-div {
+    display: flex;
+    gap: 1rem;
+
+    .Nav-Links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+
+      li {
+        position: relative;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      li:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #222;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+
+      li:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+
+    .header-theme-switch-div .icon-moon {
+      font-size: 1.1rem;
+    }
+
+    .header-menu-button {
+      display: none;
+
+      .menu-icon:hover {
+        cursor: pointer;
+        color: #333;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .Header {
+    padding: 0.6rem 1rem;
+
+    .navLinks-div {
+      .Nav-Links {
+        display: none;
+      }
+      .header-menu-button {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .Header {
+    display: none;
+  }
+}

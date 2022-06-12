@@ -1,0 +1,67 @@
+@import "../variable.scss";
+@import "../mixin.scss";
+
+.skills-container {
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);
+  padding: 4rem 1rem;
+  overflow: hidden;
+
+  .header-texts-div {
+    padding: 0 1rem;
+  }
+
+  .skills-div {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 4rem;
+
+    .skill {
+      background-color: var(--primary-bg-color);
+      padding: 20px;
+      border-right: 9px solid var(--primary-color);
+      border-left: 9px solid var(--primary-color);
+      box-shadow: 0px 0px 2px #333;
+      border-radius: 4px;
+      flex-grow: 1;
+      flex-basis: 0;
+      max-width: 440px;
+      transition: 0.3s ease-in-out;
+
+      p {
+        font-size: 1.3rem;
+        font-weight: 900;
+        border-bottom: 1px solid #999;
+        margin-bottom: 1.5rem;
+      }
+      ul {
+        display: grid;
+        gap: 0.4rem;
+        position: relative;
+        left: 15px;
+
+        li {
+          list-style: disc;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .skill:hover {
+      box-shadow: 0px 0px 10px #333;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .skills-div {
+    box-shadow: 0px 0px 0px var(--text-color);
+    flex-wrap: wrap;
+
+    .skill {
+      border-right: 4px solid var(--primary-color);
+      border-left: 4px solid var(--primary-color);
+    }
+  }
+}

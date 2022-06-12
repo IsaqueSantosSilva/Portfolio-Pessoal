@@ -1,0 +1,17 @@
+html[data-theme="dark"] {
+  --primary-color: #3493be;
+  --text-color: #fff;
+  --primary-bg-color: #111;
+  --secondary-bg-color: #222;
+  --alt-bg-color: #272727;
+  --alt-color: #FFC107;
+}
+
+html[data-theme="light"] {
+  --primary-color: #3493be;
+  --text-color: #222;
+  --primary-bg-color: #fff;
+  --secondary-bg-color: #dfdfdf;
+  --alt-bg-color: #cccccc;
+  --alt-color: #FFC107;
+}
