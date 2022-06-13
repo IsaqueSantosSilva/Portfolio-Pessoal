@@ -43,11 +43,11 @@ const AppAbout = (props) => {
         <div className="details">
           <div className="experience-div">
             <div className="experience">
-              <p>2-</p>
+              <p>1</p>
               <p>Anos de experiência como freelancer</p>
             </div>
             <div className="experience">
-              <p>2-</p>
+              <p>+1</p>
               <p>Anos de experiência em projetos pessoais</p>
             </div>
           </div>
