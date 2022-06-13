@@ -1,3 +1,3 @@
 # Portfólio Pessoal
 
-Prototype: https://isaquesantossilva.github.io/PortfólioPessoal/
+Prototype: https://isaquesantossilva.github.io/Portfolio-Pessoal/
