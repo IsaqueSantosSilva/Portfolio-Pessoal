@@ -23,7 +23,7 @@ library.add(
 
 const AppHome = (props) => {
   return (
-    <div className="home-container" id="home">
+    <section className="home-container" id="home">
       <div
         className="profile-container"
         data-aos={props.aos}
@@ -126,7 +126,7 @@ const AppHome = (props) => {
           />
         </span>
       </div>
-    </div>
+    </section>
   );
 };
 export default AppHome;

@@ -27,28 +27,52 @@ const App = () => {
     AOS.refresh();
   }, []);
 
+  /* This is a function that is called when the page is loaded. It sets the preloader to false and the
+  renderPage to true. It also sets the overflowY to scroll. */
   window.addEventListener("load", () => {
     setPreloader(false);
-    document.body.style.overflowY = "scroll";
     setRenderPage(true);
-    window.scrollTo(0, 0);
+    document.body.style.overflowY = "scroll";
+
+    setTimeout(() => {
+      if (preloader === true) {
+        setPreloader(false);
+        return;
+      }
+    }, 3000);
   });
 
+  /**
+   * When the user clicks on a menu item, the page scrolls to the section of the page that the menu item
+   * is associated with.
+   */
   const intoView = (id) => {
     document.getElementById(id).scrollIntoView();
     setSideBarState({ right: "-333px" });
     setFooterMenuToggle({ bottom: "-333px" });
   };
 
+  /**
+   * It closes the side bar and footer menu
+   */
   const closeMenus = () => {
     setSideBarState({ right: "-333px" });
     setFooterMenuToggle({ bottom: "-333px" });
   };
 
+  /**
+   * It sets the state of the sidebar to the position passed in.
+   */
   const toggleSidebar = (position) => {
     setSideBarState({ right: position });
   };
 
+  /**
+   * If the bottom property of the FooterMenuToggle object is equal to -333px, then set the bottom
+   * property to 40px. If the bottom property is not equal to -333px, then set the bottom property to
+   * -333px
+   * @returns the value of the bottom property of the FooterMenuToggle object.
+   */
   const toggleFooterMenu = () => {
     if (FooterMenuToggle.bottom === "-333px") {
       setFooterMenuToggle({ bottom: "40px" });
@@ -79,10 +103,10 @@ const App = () => {
           aosDuration={2000}
         />
 
-        <AppAbout aos={"fade-up-right"} aos2={"flip-up"} />
-        <AppPortofolio aos={"fade-up-left"} />
-        <AppSkills aos={"flip-down"} />
-        <AppContact aos={"fade-up-left"} />
+        <AppAbout aos={"fade-up"} aos2={"flip-up"} />
+        <AppPortofolio aos={"fade-up"} />
+        <AppSkills aos={"fade-up"} />
+        <AppContact aos={"fade-up"} />
       </main>
       {/* Main Content End */}
 

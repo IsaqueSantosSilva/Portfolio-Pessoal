@@ -26,7 +26,7 @@ const AppPortofolio = (props) => {
   useEffect(() => getRepo(), []);
 
   return (
-    <div className="potofolio-container" id="portofolio">
+    <section className="potofolio-container" id="portofolio">
       <div className="section-main-title-container ">
         <p>Portfólio</p>
         <p>Meus portfólios do GitHub</p>
@@ -102,7 +102,7 @@ const AppPortofolio = (props) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 };
 export default AppPortofolio;

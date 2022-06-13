@@ -6,63 +6,147 @@
   padding: 5rem 1rem;
   color: var(--text-color);
 
-  .about-details {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 5rem;
+  #info {
+    padding-top: 4rem;
+    max-width: 1400px;
+    margin: auto;
 
-    .about {
-      max-width: 450px;
-      font-size: 1.2rem;
-      line-height: 25px;
-    }
-
-    .details {
-      display: grid;
-      place-items: center;
+    .row {
+      @include flex-center;
+      align-items: baseline;
       gap: 2rem;
-      position: relative;
-      bottom: 10px;
 
-      .experience-div {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
+      .card {
+        border-radius: 5px;
+        flex-basis: 73.9em;
+        padding: 1rem 2rem 3rem 1rem;
+        background-color: var(--primary-bg-color);
+        position: relative;
+        color: var(--text-color);
 
-        .experience {
-          text-align: center;
-          max-width: 120px;
+        .aboutme-desc {
+          display: grid;
+          gap: 1.5rem;
+        }
 
-          p:nth-of-type(1) {
-            font-size: 1.4rem;
-            font-weight: 900;
-          }
+        .experience-div {
+          margin-top: 2rem;
+          display: grid;
+          gap: 3rem;
 
-          p:nth-of-type(2) {
-            font-size: 0.8rem;
+          .experience-info {
+            display: flex;
+            gap: 1rem;
+
+            .start-year {
+              min-width: 80px;
+              font-weight: 900;
+            }
+
+            div b {
+              font-size: 1.2rem;
+            }
+
+            ul li {
+              list-style-type: disc;
+              margin-top: 1rem;
+              margin-left: 1.5rem;
+            }
+
+            button {
+              @include button;
+              background-color: var(--alt-color);
+              color: #222;
+              margin-top: 2rem;
+              width: 100%;
+            }
           }
         }
-      }
-
-      button {
-        @include button;
-      }
-
-      button:hover {
-        transform: translateY(-3px);
-      }
-
-      button:hover .icon {
-        transform: translateX(0.3rem) scale(1.2);
+        &:after {
+          content: "";
+          display: block;
+          width: 0px;
+          height: 0px;
+          background-color: skyblue;
+          top: 0px;
+          right: 0px;
+          border-bottom: 30px solid darken(#3493be, 5%);
+          border-left: 30px solid darken(#3493be, 5%);
+          border-right: 30px solid var(--secondary-bg-color);
+          border-top: 30px solid var(--secondary-bg-color);
+          position: absolute;
+          filter: drop-shadow(-5px 5px 3px rgba(0, 0, 0, 0.5));
+        }
+        &:before {
+          content: "";
+          display: block;
+          width: 0px;
+          height: 0px;
+          border-top: 15px solid darken(#3493be, 5%);
+          border-right: 15px solid darken(#3493be, 5%);
+          border-left: 15px solid var(--secondary-bg-color);
+          border-bottom: 15px solid var(--secondary-bg-color);
+          bottom: 0px;
+          left: 0px;
+          position: absolute;
+          filter: drop-shadow(7px -7px 5px #00000080);
+          margin-right: 10%;
+        }
+        h2 {
+          margin-bottom: 1.5rem;
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+        p {
+          font-size: 1.1rem;
+          line-height: 140%;
+        }
       }
     }
   }
 }
 
-@media screen and (max-width: 508px) {
-  .about-container .about-details {
-    flex-wrap: wrap;
-    text-align: center;
+@media screen and (max-width: 900px) {
+  .about-container #info .row {
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .about-container #info .row {
+    flex-wrap: wrap-reverse;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .about-container #info .row {
+    @include flex-center;
+
+    .card {
+      padding: 1rem 1rem 3rem 1rem;
+      .aboutme-desc {
+        span {
+          margin-bottom: 1rem;
+        }
+
+        p {
+          margin-top: 1rem;
+        }
+      }
+
+      .experience-div {
+        margin-top: 2rem;
+
+        .experience-info .start-year {
+          min-width: 50px;
+        }
+
+        ul li {
+          position: relative;
+          right: 20px;
+        }
+      }
+    }
   }
 }

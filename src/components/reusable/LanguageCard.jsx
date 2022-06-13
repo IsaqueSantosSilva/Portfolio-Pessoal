@@ -74,10 +74,10 @@ const LanguageCard = (props) => {
 
   return (
     <>
-      <div className="percentage-main-container">
+      <div className="percentage-main-container" data-aos={props.dataAos}>
         <p>Linguagens Mais usadas</p>
         {myObj.map((langs) => (
-          <div className="percentage-container" key={langs.name} data-aos={props.dataAos}>
+          <div className="percentage-container" key={langs.name}>
             <div className="percentage-bar">
               <div className={`bar ${langs.name}`} style={{ width: langs.value }}>
                 <span>{langs.name}</span>

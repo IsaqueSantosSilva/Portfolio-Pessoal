@@ -3,26 +3,23 @@
 
 .percentage-main-container {
   padding: 1rem;
-  max-width: 700px;
   transition: 0.2s;
   border-radius: 5px;
   margin: auto;
-  margin-top: 5rem;
   display: grid;
   gap: 1rem;
   background-color: var(--primary-bg-color);
-  box-shadow: 0px 0px 3px #111;
   color: var(--text-color);
+  margin-top: 2rem;
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 900;
   }
 
   .percentage-container {
     display: flex;
     align-items: center;
-    //     gap: 1rem;
 
     .percentage-bar {
       background-color: var(--secondary-bg-color);
@@ -31,13 +28,15 @@
 
       .bar {
         border-radius: 5px 50px 50px 5px;
-        height: 30px;
+        height: 20px;
         transition: 0.4s;
         display: flex;
         align-items: center;
+        color: #fff;
 
         span {
-          font-size: 0.9rem;
+          text-shadow: 2px 2px 0px #000;
+          font-size: 0.8rem;
           position: relative;
           left: 5px;
         }
@@ -67,8 +66,10 @@
   }
 }
 
-.percentage-main-container:hover {
-  box-shadow: 2px 2px 7px #111;
+@media screen and (max-width: 800px) {
+  .percentage-main-container {
+    margin-top: 1rem;
+  }
 }
 
 @media screen and (max-width: 400px) {

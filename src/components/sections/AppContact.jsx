@@ -94,7 +94,7 @@ const AppContact = (props) => {
         closeTooltip={() => toggleTooltip("-333px", "red")}
       />
 
-      <div className="contact-container" id="contact">
+      <section className="contact-container" id="contact">
         <div className="section-main-title-container ">
           <p>Contato</p>
           <p>Meios para entrar em contato comigo</p>
@@ -186,7 +186,7 @@ const AppContact = (props) => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
