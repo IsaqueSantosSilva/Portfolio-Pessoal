@@ -65,7 +65,6 @@ const AppPortofolio = (props) => {
               <img
                 src={`https://raw.githubusercontent.com/ZekaBoga/imagens-salvas/main/Portofolio-Templates/${repos.name}.webp`}
                 alt={`imagem para ${repos.name}`}
-                loading="lazy"
               />
             </div>
 
