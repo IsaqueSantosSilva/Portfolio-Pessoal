@@ -18,20 +18,23 @@ import FooterMenu from "./components/reusable/FooterMenu";
 
 const App = () => {
   const [sideBarState, setSideBarState] = useState();
-  const [preloader, setPreloader] = useState(false);
+  const [preloader, setPreloader] = useState(true);
   const [FooterMenuToggle, setFooterMenuToggle] = useState({ right: "-333px" });
 
   /* A hook that is used to perform side effects in function components. It serves the same purpose as
   componentDidMount, componentDidUpdate, and componentWillUnmount in React classes, but unified into a
   single API. */
   useEffect(() => {
+    // setPreloader(true);
     AOS.init();
     AOS.refresh();
-
-    setPreloader(true);
-    window.addEventListener("load", () => {
+    setTimeout(() => {
       setPreloader(false);
-    });
+    }, 3000);
+
+    // window.addEventListener("load", () => {
+    //   setPreloader(false);
+    // });
   }, []);
 
   /**

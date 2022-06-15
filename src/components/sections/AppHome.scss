@@ -37,6 +37,7 @@
     @include flex-center;
     gap: 1.5rem;
     max-width: 700px;
+    margin-top: 3rem;
 
     .home-links-div {
       height: 100%;
@@ -352,6 +353,7 @@
     bottom: 10px;
 
     .name-div {
+      white-space: nowrap;
       span {
         font-size: 3rem;
         font-weight: 900;
@@ -424,116 +426,47 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 700px) {
+  .home-container {
+    .profile-container {
+      flex-wrap: wrap;
+
+      .home-links-div {
+        display: none;
+      }
+    }
+
+    .intro-div {
+      .name-div {
+        text-align: center;
+      }
+    }
+  }
+
+  .scroll-down-div {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 330px) {
   .home-container .profile-container .image-div .glitch {
     width: 250px;
     height: 250px;
   }
 }
-@media screen and (max-width: 550px) {
+
+@media screen and (max-height: 600px) {
   .home-container {
-    top: 40px;
+    height: auto;
+  }
+
+  .scroll-down-div {
+    display: none;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .home-container {
-    top: 0px;
-  }
-}
-
-@media screen and (max-width: 692px) {
-  .home-container {
-    position: relative;
-
-    .profile-container {
-      gap: 1rem;
-
-      .home-links-div {
-        gap: 1.5rem;
-        position: relative;
-        bottom: 20px;
-
-        li .home-links-icon {
-          font-size: 1.7rem;
-        }
-      }
-
-      .image-div {
-        .box {
-          width: 250px;
-          height: 250px;
-        }
-      }
-
-      .intro-div {
-        gap: 4rem;
-
-        .name-div {
-          span {
-            font-size: 2.7rem;
-          }
-        }
-
-        .intro-description {
-          gap: 2rem;
-        }
-      }
-    }
-
-    .scroll-down-div {
-      display: none;
-    }
-  }
-}
-
-@media screen and (max-width: 554px) {
   .home-container .profile-container {
-    gap: 1rem;
-    flex-wrap: wrap;
-
-    .home-links-div {
-      display: none;
-    }
-
-    .intro-div {
-      gap: 2rem;
-
-      .name-div {
-        text-align: center;
-      }
-
-      .intro-description {
-        gap: 2rem;
-      }
-    }
-  }
-}
-
-@media screen and (max-height: 553px) {
-  .home-container {
-    height: auto;
-
-    .profile-container {
-      margin-top: 3rem;
-    }
-
-    .scroll-down-div {
-      display: none;
-    }
-  }
-}
-
-@media screen and (max-height: 553px) and (max-width: 600px) {
-  .home-container {
-    height: auto;
-
-    .profile-container {
-      margin-top: 0rem;
-    }
-
-    .scroll-down-div {
-      display: none;
-    }
+    margin-top: 0;
   }
 }
