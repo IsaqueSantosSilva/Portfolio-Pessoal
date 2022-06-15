@@ -30,7 +30,7 @@ const App = () => {
     AOS.refresh();
     setTimeout(() => {
       setPreloader(false);
-    }, 3000);
+    }, 2000);
 
     // window.addEventListener("load", () => {
     //   setPreloader(false);
