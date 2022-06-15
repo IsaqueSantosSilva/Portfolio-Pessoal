@@ -50,7 +50,8 @@ const AppPortofolio = (props) => {
           type: "progressbar",
           clickable: true,
         }}
-        navigation={false}
+        navigation={true}
+        scrollbar={{ draggable: true }}
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="mySwiper"
       >

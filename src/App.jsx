@@ -18,33 +18,25 @@ import FooterMenu from "./components/reusable/FooterMenu";
 
 const App = () => {
   const [sideBarState, setSideBarState] = useState();
-  const [preloader, setPreloader] = useState(true);
-  const [renderPage, setRenderPage] = useState(true);
+  const [preloader, setPreloader] = useState(false);
   const [FooterMenuToggle, setFooterMenuToggle] = useState({ right: "-333px" });
 
+  /* A hook that is used to perform side effects in function components. It serves the same purpose as
+  componentDidMount, componentDidUpdate, and componentWillUnmount in React classes, but unified into a
+  single API. */
   useEffect(() => {
     AOS.init();
     AOS.refresh();
+
+    setPreloader(true);
+    window.addEventListener("load", () => {
+      setPreloader(false);
+    });
   }, []);
 
-  /* This is a function that is called when the page is loaded. It sets the preloader to false and the
-  renderPage to true. It also sets the overflowY to scroll. */
-  window.addEventListener("load", () => {
-    setPreloader(false);
-    setRenderPage(true);
-    document.body.style.overflowY = "scroll";
-
-    setTimeout(() => {
-      if (preloader === true) {
-        setPreloader(false);
-        return;
-      }
-    }, 3000);
-  });
-
   /**
-   * When the user clicks on a menu item, the page scrolls to the section of the page that the menu item
-   * is associated with.
+   * When the user clicks on a link in the side bar, the side bar closes and the page scrolls to the
+   * section of the page that the user clicked on.
    */
   const intoView = (id) => {
     document.getElementById(id).scrollIntoView();
@@ -53,7 +45,7 @@ const App = () => {
   };
 
   /**
-   * It closes the side bar and footer menu
+   * When the user clicks on the close button, the side bar and footer menu will close.
    */
   const closeMenus = () => {
     setSideBarState({ right: "-333px" });
@@ -61,7 +53,8 @@ const App = () => {
   };
 
   /**
-   * It sets the state of the sidebar to the position passed in.
+   * The toggleSidebar function takes a position argument and sets the right property of the sidebar
+   * state to the position argument.
    */
   const toggleSidebar = (position) => {
     setSideBarState({ right: position });
@@ -69,8 +62,8 @@ const App = () => {
 
   /**
    * If the bottom property of the FooterMenuToggle object is equal to -333px, then set the bottom
-   * property to 40px. If the bottom property is not equal to -333px, then set the bottom property to
-   * -333px
+   * property of the FooterMenuToggle object to 40px. Otherwise, set the bottom property of the
+   * FooterMenuToggle object to -333px.
    * @returns the value of the bottom property of the FooterMenuToggle object.
    */
   const toggleFooterMenu = () => {
@@ -82,9 +75,8 @@ const App = () => {
     }
   };
 
-  return renderPage ? (
+  return (
     <>
-      <Preloader trigger={preloader} />
       <Header
         openSideBar={() => toggleSidebar("0px")}
         scrollHome={() => intoView("home")}
@@ -94,21 +86,23 @@ const App = () => {
         scrollContact={() => intoView("contact")}
       />
 
-      {/* Main Content Start */}
-      <main className="main" onClick={() => closeMenus()}>
-        <AppHome
-          scrollFunction={() => intoView("contact")}
-          scrollToAbout={() => intoView("about")}
-          aos={"zoom-out"}
-          aosDuration={2000}
-        />
+      {preloader ? (
+        <Preloader trigger={preloader} />
+      ) : (
+        <main className="main" onClick={() => closeMenus()}>
+          <AppHome
+            scrollFunction={() => intoView("contact")}
+            scrollToAbout={() => intoView("about")}
+            aos={"zoom-out"}
+            aosDuration={2000}
+          />
 
-        <AppAbout aos={"fade-up"} aos2={"flip-up"} />
-        <AppPortofolio aos={"fade-up"} />
-        <AppSkills aos={"fade-up"} />
-        <AppContact aos={"fade-up"} />
-      </main>
-      {/* Main Content End */}
+          <AppAbout aos={"fade-up"} aos2={"flip-up"} />
+          <AppPortofolio aos={"fade-up"} />
+          <AppSkills aos={"fade-up"} />
+          <AppContact aos={"fade-up"} />
+        </main>
+      )}
 
       <SideBar
         sideBarState={sideBarState}
@@ -133,8 +127,6 @@ const App = () => {
 
       <ScrollTopButton ScrollTop={() => intoView("home")} />
     </>
-  ) : (
-    ""
   );
 };
 
