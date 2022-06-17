@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Portfolio-Pessoal/static/css/main.bbf98084.css",
-    "main.js": "/Portfolio-Pessoal/static/js/main.ed3a9d8f.js",
+    "main.js": "/Portfolio-Pessoal/static/js/main.dd123e97.js",
     "static/media/IsaqueSilvaCV.pdf": "/Portfolio-Pessoal/static/media/IsaqueSilvaCV.03d4e7e68475f194ada4.pdf",
     "index.html": "/Portfolio-Pessoal/index.html",
     "main.bbf98084.css.map": "/Portfolio-Pessoal/static/css/main.bbf98084.css.map",
-    "main.ed3a9d8f.js.map": "/Portfolio-Pessoal/static/js/main.ed3a9d8f.js.map"
+    "main.dd123e97.js.map": "/Portfolio-Pessoal/static/js/main.dd123e97.js.map"
   },
   "entrypoints": [
     "static/css/main.bbf98084.css",
-    "static/js/main.ed3a9d8f.js"
+    "static/js/main.dd123e97.js"
   ]
 }
