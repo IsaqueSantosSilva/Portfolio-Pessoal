@@ -23,7 +23,7 @@ const AppSkills = (props) => {
           </ul>
         </div>
         <div className="skill">
-          <p>Frameworks e Bibliotecas</p>
+          <p>Frameworks/Bibliotecas</p>
           <ul>
             <li>Angular 13</li>
             <li>ReactJS(Básico)</li>
