@@ -1,17 +1,39 @@
 @import "../variable.scss";
 @import "../mixin";
 
-.darkSwitch-btn {
-  transition: 0.3s;
-  background: none;
-  color: #222;
-  cursor: pointer;
+.themeSwitch-container {
+  .darkSwitch-btn {
+    transition: 0.3s;
+    background: none;
+    color: #222;
+    cursor: pointer;
+    display: none;
+  }
 
-  // .icon-moon {
-  //   font-size: 1rem;
-  // }
+  button:hover {
+    transform: translateY(-3px) scale(1.05);
+  }
+
+  .slider {
+    position: relative;
+    top: 4px;
+  }
 }
 
-button:hover {
-  transform: translateY(-3px) scale(1.05);
+@media screen and (max-width: 650px) {
+  .themeSwitch-container .slider {
+    position: relative;
+    top: 0px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .themeSwitch-container {
+    .darkSwitch-btn {
+      display: block;
+    }
+    .slider {
+      display: none;
+    }
+  }
 }
