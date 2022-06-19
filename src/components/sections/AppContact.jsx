@@ -44,7 +44,7 @@ const AppContact = (props) => {
   const toggleTooltip = (position, bgColor, msg) => {
     setToggleTooltip({ left: position, backgroundColor: bgColor });
     setTooltipMsg(msg);
-    setInterval(() => {
+    setTimeout(() => {
       setToggleTooltip({ left: "-333px" });
     }, 3000);
   };
