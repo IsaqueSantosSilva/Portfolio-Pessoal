@@ -25,16 +25,12 @@ const App = () => {
   componentDidMount, componentDidUpdate, and componentWillUnmount in React classes, but unified into a
   single API. */
   useEffect(() => {
-    // setPreloader(true);
     AOS.init();
     AOS.refresh();
     setTimeout(() => {
       setPreloader(false);
-    }, 2000);
+    }, 200);
 
-    // window.addEventListener("load", () => {
-    //   setPreloader(false);
-    // });
   }, []);
 
   /**

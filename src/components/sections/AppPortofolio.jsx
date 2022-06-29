@@ -14,7 +14,7 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper";
 const AppPortofolio = (props) => {
   const [repo, seRepo] = useState([]);
 
-  var getRepo = () => {
+  const getRepo = () => {
     axios
       .get("https://api.github.com/users/IsaqueSantosSilva/repos")
       .then((res) => {

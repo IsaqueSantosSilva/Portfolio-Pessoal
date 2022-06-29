@@ -24,11 +24,16 @@ library.add(
   faExternalLinkAlt
 );
 
+/* Getting the current year. */
+let year = new Date().getFullYear();
+/* Calculating the age of the person. */
+let age = year - 1999;
+
 /**
  * It creates a link to the file and then clicks it.
  */
 const downloadFunc = () => {
-  var anchor = document.createElement("a");
+  let anchor = document.createElement("a");
   anchor.setAttribute("href", CVfile);
   anchor.setAttribute("download", "");
   document.body.appendChild(anchor);
@@ -52,7 +57,7 @@ const AppAbout = (props) => {
 
               <div className="aboutme-desc">
                 <p>
-                  Meu nome é Isaque tenho 23 anos e sou formado em Anáise e
+                  Meu nome é Isaque tenho {age} anos e sou formado em Anáise e
                   Desenvolvimentos de Sistemas.
                 </p>
 

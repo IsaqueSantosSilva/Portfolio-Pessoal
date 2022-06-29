@@ -11,7 +11,7 @@ const url = "https://api.github.com/users/IsaqueSantosSilva/repos";
  * @returns The percentage of the total.
  */
 const percentage = (percent, total) => {
-  return ((percent / total) * 100).toFixed(2);
+  return ((percent / total) * 100).toFixed(0);
 };
 
 const LanguageCard = (props) => {
@@ -27,7 +27,7 @@ const LanguageCard = (props) => {
       let scss = 0;
 
       for (let i = 0; i < response.data.length; i++) {
-        var res = response.data[i].language;
+        let res = response.data[i].language;
 
         if (res === "JavaScript") {
           js++;
@@ -73,23 +73,19 @@ const LanguageCard = (props) => {
   ];
 
   return (
-    <>
-      <div className="percentage-main-container" data-aos={props.dataAos}>
-        <p>Linguagens Mais usadas</p>
+    <div className="languages-container" data-aos={props.dataAos}>
+      <p>Linguagens Mais usadas</p>
+
+      <div className="langs-circles">
         {myObj.map((langs) => (
-          <div className="percentage-container" key={langs.name}>
-            <div className="percentage-bar">
-              <div className={`bar ${langs.name}`} style={{ width: langs.value }}>
-                <span>{langs.name}</span>
-                </div>
-            </div>
-            <div className="percentage-value">
-              <span>{langs.value}</span>
-            </div>
+          <div className="ui-widgets" key={langs.name}>
+            <div className="ui-values">{langs.value}</div>
+            <div className="ui-labels">{langs.name}</div>
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
+
 export default LanguageCard;

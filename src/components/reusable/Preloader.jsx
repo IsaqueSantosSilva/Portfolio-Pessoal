@@ -10,7 +10,6 @@ const Preloader = (props) => {
   /* Checking the viewport size and setting the size of the preloader. */
   useEffect(() => {
     if (window.matchMedia("(max-width:800px)").matches) {
-      console.log("a viewport tem pelo menos 800 pixels de largura");
       setSize(30);
     }
   }, []);

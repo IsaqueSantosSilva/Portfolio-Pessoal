@@ -1,85 +1,173 @@
 @import "../variable.scss";
 @import "../mixin";
 
-.percentage-main-container {
-  padding: 1rem;
-  transition: 0.2s;
-  border-radius: 5px;
-  margin: auto;
-  display: grid;
-  gap: 1rem;
+$color1-border: #3493be;
+$color2-border: #83bad3;
+$color3-border: #1b6f96;
+$color4-border: #3493be;
+
+.languages-container {
   background-color: var(--primary-bg-color);
   color: var(--text-color);
   margin-top: 2rem;
+  padding: 1rem 1rem 2rem 1rem;
+  border-radius: 5px;
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 900;
+    margin-bottom: 2rem;
   }
 
-  .percentage-container {
+  .langs-circles {
     display: flex;
-    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
 
-    .percentage-bar {
-      background-color: var(--secondary-bg-color);
-      border-radius: 5px;
-      flex-grow: 1;
+    .ui-widgets {
+      position: relative;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 9rem;
+      border: 1.2rem solid palegreen;
+      box-shadow: inset 0 0 7px grey;
+      text-align: center;
+      box-sizing: border-box;
 
-      .bar {
-        border-radius: 5px 50px 50px 5px;
-        height: 20px;
-        transition: 0.4s;
-        display: flex;
-        align-items: center;
-        color: #fff;
+      .ui-values {
+        @include absolute-center;
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
 
-        span {
-          text-shadow: 2px 2px 0px #000;
-          font-size: 0.8rem;
-          position: relative;
-          left: 5px;
+      .ui-labels {
+        left: 0;
+        bottom: -16px;
+        color: #222;
+        position: absolute;
+        width: 100%;
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+    }
+
+    .ui-widgets:nth-child(1) {
+      border-left-color: $color1-border;
+      border-top-color: $color2-border;
+      border-right-color: $color3-border;
+      border-bottom-color: #fff;
+    }
+
+    .ui-widgets:nth-child(2) {
+      border-left-color: $color1-border;
+      border-top-color: $color2-border;
+      border-right-color: $color3-border;
+      border-bottom-color: #fff;
+    }
+
+    .ui-widgets:nth-child(3) {
+      border-left-color: $color1-border;
+      border-top-color: $color2-border;
+      border-right-color: #fff;
+      border-bottom-color: #fff;
+    }
+
+    .ui-widgets:nth-child(4) {
+      border-left-color: $color1-border;
+      border-top-color: $color2-border;
+      border-right-color: #fff;
+      border-bottom-color: #fff;
+    }
+
+    .ui-widgets:nth-child(5) {
+      border-left-color: $color1-border;
+      border-top-color: #fff;;
+      border-right-color: #fff;
+      border-bottom-color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .languages-container {
+    padding: 1rem 1rem 2rem 1rem;
+
+    .langs-circles {
+      gap: 1rem;
+
+      .ui-widgets {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 9rem;
+        border: 1rem solid palegreen;
+
+        .ui-values {
+          font-size: 1.2rem;
+        }
+
+        .ui-labels {
+          font-size: 14px;
         }
       }
-
-      .css {
-        background-color: #2965f1;
-      }
-      .ts {
-        background-color: #2d78c7;
-      }
-      .scss {
-        background-color: #cd669b;
-      }
-      .html {
-        background-color: #f06524;
-      }
-      .js {
-        background-color: #ead41c;
-      }
-    }
-
-    .percentage-value {
-      text-align: end;
-      width: 80px;
     }
   }
 }
 
-@media screen and (max-width: 800px) {
-  .percentage-main-container {
-    margin-top: 1rem;
+@media screen and (max-width: 1100px) {
+  .languages-container {
+    padding: 1rem 1rem 2rem 1rem;
+
+    .langs-circles {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+
+      .ui-widgets {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 9rem;
+        border: 1rem solid palegreen;
+
+        .ui-values {
+          font-size: 1.2rem;
+        }
+
+        .ui-labels {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }
 
-@media screen and (max-width: 400px) {
-  .percentage-main-container {
+@media screen and (max-width: 600px) {
+  .languages-container {
+    padding: 1rem 1rem 2rem 1rem;
+
     p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
-    .percentage-container {
-      .percentage-value {
-        width: 60px;
+
+    .langs-circles {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 2rem 1rem;
+
+      .ui-widgets {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 9rem;
+        border: .9rem solid palegreen;
+
+        .ui-values {
+          font-size: 1.2rem;
+        }
+
+        .ui-labels {
+          bottom: -27px;
+          font-size: 11px;
+          color: var(--text-color);
+        }
       }
     }
   }

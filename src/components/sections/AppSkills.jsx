@@ -42,6 +42,7 @@ const AppSkills = (props) => {
             <li>Sass</li>
             <li>UI/UX</li>
             <li>ApiRest</li>
+            <li>SQL</li>
             <li>Kanban/Jira</li>
             <li>Inglês(Fluente)</li>
           </ul>
