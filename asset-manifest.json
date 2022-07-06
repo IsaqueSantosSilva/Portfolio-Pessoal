@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/Portfolio-Pessoal/static/css/main.bbf98084.css",
-    "main.js": "/Portfolio-Pessoal/static/js/main.254763f0.js",
+    "main.css": "/Portfolio-Pessoal/static/css/main.bc5bd259.css",
+    "main.js": "/Portfolio-Pessoal/static/js/main.79077ce2.js",
+    "static/media/profile-me.png": "/Portfolio-Pessoal/static/media/profile-me.dacff122a718523c5097.png",
     "static/media/IsaqueSilvaCV.pdf": "/Portfolio-Pessoal/static/media/IsaqueSilvaCV.03d4e7e68475f194ada4.pdf",
     "index.html": "/Portfolio-Pessoal/index.html",
-    "main.bbf98084.css.map": "/Portfolio-Pessoal/static/css/main.bbf98084.css.map",
-    "main.254763f0.js.map": "/Portfolio-Pessoal/static/js/main.254763f0.js.map"
+    "main.bc5bd259.css.map": "/Portfolio-Pessoal/static/css/main.bc5bd259.css.map",
+    "main.79077ce2.js.map": "/Portfolio-Pessoal/static/js/main.79077ce2.js.map"
   },
   "entrypoints": [
-    "static/css/main.bbf98084.css",
-    "static/js/main.254763f0.js"
+    "static/css/main.bc5bd259.css",
+    "static/js/main.79077ce2.js"
   ]
 }
